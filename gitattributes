@@ -1,0 +1,12 @@
+# GitHub Language Zoo — force tracked files to be included in Linguist stats
+* linguist-detectable
+
+# Make sure files are not excluded as generated, vendored, or documentation
+* -linguist-generated
+* -linguist-vendored
+* -linguist-documentation
+
+# Explicit classifications for intentionally unusual filenames
+hack.hack linguist-language=Hack linguist-detectable
+makefile.mk linguist-language=Makefile linguist-detectable
+dockerfile.dockerfile linguist-language=Dockerfile linguist-detectable
