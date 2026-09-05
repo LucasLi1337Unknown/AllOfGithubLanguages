@@ -1,12 +1,123 @@
-# GitHub Language Zoo — force tracked files to be included in Linguist stats
-* linguist-detectable
+# AllOfGithubLanguages — explicit GitHub Linguist overrides
+# Put this file at the REPOSITORY ROOT as: .gitattributes
+#
+# Important:
+# GitHub's sidebar still shows only the largest few languages and groups the
+# rest under "Other". These rules make the sample files count correctly;
+# they cannot force GitHub's sidebar to print 50+ separate rows.
 
-# Make sure files are not excluded as generated, vendored, or documentation
-* -linguist-generated
-* -linguist-vendored
-* -linguist-documentation
+# Do NOT let repository metadata dominate the language statistics
+README.md linguist-detectable=false
+.gitattributes linguist-detectable=false
+.gitignore linguist-detectable=false
+.gitignore.example linguist-detectable=false
+LICENSE linguist-detectable=false
 
-# Explicit classifications for intentionally unusual filenames
-hack.hack linguist-language=Hack linguist-detectable
-makefile.mk linguist-language=Makefile linguist-detectable
-dockerfile.dockerfile linguist-language=Dockerfile linguist-detectable
+# Explicit language mapping for every sample file
+c.c linguist-language=C linguist-detectable=true
+cpp.cpp linguist-language=C++ linguist-detectable=true
+csharp.cs linguist-language=C# linguist-detectable=true
+java.java linguist-language=Java linguist-detectable=true
+kotlin.kt linguist-language=Kotlin linguist-detectable=true
+swift.swift linguist-language=Swift linguist-detectable=true
+go.go linguist-language=Go linguist-detectable=true
+rust.rs linguist-language=Rust linguist-detectable=true
+python.py linguist-language=Python linguist-detectable=true
+ruby.rb linguist-language=Ruby linguist-detectable=true
+php.php linguist-language=PHP linguist-detectable=true
+hack.hack linguist-language=Hack linguist-detectable=true
+javascript.js linguist-language=JavaScript linguist-detectable=true
+typescript.ts linguist-language=TypeScript linguist-detectable=true
+html.html linguist-language=HTML linguist-detectable=true
+css.css linguist-language=CSS linguist-detectable=true
+shell.sh linguist-language=Shell linguist-detectable=true
+powershell.ps1 linguist-language=PowerShell linguist-detectable=true
+perl.pl linguist-language=Perl linguist-detectable=true
+lua.lua linguist-language=Lua linguist-detectable=true
+r.r linguist-language=R linguist-detectable=true
+dart.dart linguist-language=Dart linguist-detectable=true
+scala.scala linguist-language=Scala linguist-detectable=true
+groovy.groovy linguist-language=Groovy linguist-detectable=true
+julia.jl linguist-language=Julia linguist-detectable=true
+haskell.hs linguist-language=Haskell linguist-detectable=true
+ocaml.ml linguist-language=OCaml linguist-detectable=true
+fsharp.fs linguist-language=F# linguist-detectable=true
+clojure.clj linguist-language=Clojure linguist-detectable=true
+elixir.exs linguist-language=Elixir linguist-detectable=true
+erlang.erl linguist-language=Erlang linguist-detectable=true
+fortran.f90 linguist-language=Fortran linguist-detectable=true
+cobol.cob linguist-language=COBOL linguist-detectable=true
+pascal.pas linguist-language=Pascal linguist-detectable=true
+assembly.asm linguist-language=Assembly linguist-detectable=true
+objective-c.m linguist-language=Objective-C linguist-detectable=true
+matlab.m linguist-language=MATLAB linguist-detectable=true
+solidity.sol linguist-language=Solidity linguist-detectable=true
+zig.zig linguist-language=Zig linguist-detectable=true
+nim.nim linguist-language=Nim linguist-detectable=true
+crystal.cr linguist-language=Crystal linguist-detectable=true
+coffeescript.coffee linguist-language=CoffeeScript linguist-detectable=true
+vbnet.vb linguist-language=Visual Basic .NET linguist-detectable=true
+tex.tex linguist-language=TeX linguist-detectable=true
+vue.vue linguist-language=Vue linguist-detectable=true
+svelte.svelte linguist-language=Svelte linguist-detectable=true
+graphql.graphql linguist-language=GraphQL linguist-detectable=true
+sql.sql linguist-language=SQL linguist-detectable=true
+yaml.yml linguist-language=YAML linguist-detectable=true
+json.json linguist-language=JSON linguist-detectable=true
+toml.toml linguist-language=TOML linguist-detectable=true
+makefile.mk linguist-language=Makefile linguist-detectable=true
+dockerfile.dockerfile linguist-language=Dockerfile linguist-detectable=true
+
+# Make sure none of the zoo samples are treated as generated/vendor/docs
+*.c -linguist-generated -linguist-vendored -linguist-documentation
+*.cpp -linguist-generated -linguist-vendored -linguist-documentation
+*.cs -linguist-generated -linguist-vendored -linguist-documentation
+*.java -linguist-generated -linguist-vendored -linguist-documentation
+*.kt -linguist-generated -linguist-vendored -linguist-documentation
+*.swift -linguist-generated -linguist-vendored -linguist-documentation
+*.go -linguist-generated -linguist-vendored -linguist-documentation
+*.rs -linguist-generated -linguist-vendored -linguist-documentation
+*.py -linguist-generated -linguist-vendored -linguist-documentation
+*.rb -linguist-generated -linguist-vendored -linguist-documentation
+*.php -linguist-generated -linguist-vendored -linguist-documentation
+*.hack -linguist-generated -linguist-vendored -linguist-documentation
+*.js -linguist-generated -linguist-vendored -linguist-documentation
+*.ts -linguist-generated -linguist-vendored -linguist-documentation
+*.html -linguist-generated -linguist-vendored -linguist-documentation
+*.css -linguist-generated -linguist-vendored -linguist-documentation
+*.sh -linguist-generated -linguist-vendored -linguist-documentation
+*.ps1 -linguist-generated -linguist-vendored -linguist-documentation
+*.pl -linguist-generated -linguist-vendored -linguist-documentation
+*.lua -linguist-generated -linguist-vendored -linguist-documentation
+*.r -linguist-generated -linguist-vendored -linguist-documentation
+*.dart -linguist-generated -linguist-vendored -linguist-documentation
+*.scala -linguist-generated -linguist-vendored -linguist-documentation
+*.groovy -linguist-generated -linguist-vendored -linguist-documentation
+*.jl -linguist-generated -linguist-vendored -linguist-documentation
+*.hs -linguist-generated -linguist-vendored -linguist-documentation
+*.ml -linguist-generated -linguist-vendored -linguist-documentation
+*.fs -linguist-generated -linguist-vendored -linguist-documentation
+*.clj -linguist-generated -linguist-vendored -linguist-documentation
+*.exs -linguist-generated -linguist-vendored -linguist-documentation
+*.erl -linguist-generated -linguist-vendored -linguist-documentation
+*.f90 -linguist-generated -linguist-vendored -linguist-documentation
+*.cob -linguist-generated -linguist-vendored -linguist-documentation
+*.pas -linguist-generated -linguist-vendored -linguist-documentation
+*.asm -linguist-generated -linguist-vendored -linguist-documentation
+*.m -linguist-generated -linguist-vendored -linguist-documentation
+*.sol -linguist-generated -linguist-vendored -linguist-documentation
+*.zig -linguist-generated -linguist-vendored -linguist-documentation
+*.nim -linguist-generated -linguist-vendored -linguist-documentation
+*.cr -linguist-generated -linguist-vendored -linguist-documentation
+*.coffee -linguist-generated -linguist-vendored -linguist-documentation
+*.vb -linguist-generated -linguist-vendored -linguist-documentation
+*.tex -linguist-generated -linguist-vendored -linguist-documentation
+*.vue -linguist-generated -linguist-vendored -linguist-documentation
+*.svelte -linguist-generated -linguist-vendored -linguist-documentation
+*.graphql -linguist-generated -linguist-vendored -linguist-documentation
+*.sql -linguist-generated -linguist-vendored -linguist-documentation
+*.yml -linguist-generated -linguist-vendored -linguist-documentation
+*.json -linguist-generated -linguist-vendored -linguist-documentation
+*.toml -linguist-generated -linguist-vendored -linguist-documentation
+*.mk -linguist-generated -linguist-vendored -linguist-documentation
+*.dockerfile -linguist-generated -linguist-vendored -linguist-documentation
